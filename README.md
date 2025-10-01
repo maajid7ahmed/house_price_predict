@@ -181,6 +181,3 @@ License
 
 MIT License
 
-I can also draft a ready-to-use requirements.txt for this project so you can push it immediately.
-
-Do you want me to do that next?
