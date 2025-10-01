@@ -1,21 +1,21 @@
-Price Prediction Model
+#Price Prediction Model
 Overview
 
-This repository contains a machine learning project for predicting house prices using Random Forest and Linear Regression models. It includes data preprocessing, model training, a Flask backend server, and a Next.js frontend client for making predictions.
+###This repository contains a machine learning project for predicting house prices using Random Forest and Linear Regression models. It includes data preprocessing, model training, a Flask backend server, and a Next.js frontend client for making predictions.
 
-Features
+#Features
 
-Predict house prices using:
+##Predict house prices using:
 
-Linear Regression (lr)
+###Linear Regression (lr)
 
-Random Forest (rf)
+###Random Forest (rf)
 
-Preprocessing steps for cleaning and preparing datasets.
+###Preprocessing steps for cleaning and preparing datasets.
 
-Flask backend server (server.py) with REST API endpoint /predict.
+###Flask backend server (server.py) with REST API endpoint /predict.
 
-Next.js frontend for a user-friendly interface.
+###Next.js frontend for a user-friendly interface.
 
 Organized structure for datasets, models, notebooks, and dependencies.
 
@@ -36,8 +36,8 @@ Backend (Flask)
 
 Clone the repository:
 
-git clone https://github.com/maajid7ahmed/price-prediction.git
-cd price-prediction
+git clone https://github.com/maajid7ahmed/house_ price-predict.git
+cd house_price_predictio
 
 
 Create a virtual environment:
