@@ -1,25 +1,19 @@
-#Price Prediction Model
-Overview
+# Price Prediction Model
 
-###This repository contains a machine learning project for predicting house prices using Random Forest and Linear Regression models. It includes data preprocessing, model training, a Flask backend server, and a Next.js frontend client for making predictions.
+## Overview
+This repository contains a machine learning project for predicting house prices using Random Forest and Linear Regression models. It includes data preprocessing, model training, a Flask backend server, and a Next.js frontend client for making predictions.
 
-#Features
+## Features
+- Predict house prices using:
+  - Linear Regression (lr)
+  - Random Forest (rf)
+- Preprocessing steps for cleaning and preparing datasets.
+- Flask backend server (`server.py`) with REST API endpoint `/predict`.
+- Next.js frontend for a user-friendly interface.
+- Organized structure for datasets, models, notebooks, and dependencies.
 
-##Predict house prices using:
-
-###Linear Regression (lr)
-
-###Random Forest (rf)
-
-###Preprocessing steps for cleaning and preparing datasets.
-
-###Flask backend server (server.py) with REST API endpoint /predict.
-
-###Next.js frontend for a user-friendly interface.
-
-Organized structure for datasets, models, notebooks, and dependencies.
-
-Repository Structure
+## Repository Structure
+```
 price-prediction/
 │
 ├── client/                 # Next.js frontend
@@ -30,154 +24,113 @@ price-prediction/
 ├── server.py               # Flask backend server for predictions
 ├── util.py                 # Utility functions
 └── requirements.txt        # Python dependencies
+```
 
-Installation
-Backend (Flask)
-
-Clone the repository:
-
-git clone https://github.com/maajid7ahmed/house_ price-predict.git
+## Installation
+### Backend (Flask)
+1. Clone the repository:
+```bash
+git clone https://github.com/maajid7ahmed/house_price-predict.git
 cd house_price_predictio
-
-
-Create a virtual environment:
-
+```
+2. Create a virtual environment:
+```bash
 python -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
-
-
-Install Python dependencies:
-
+```
+3. Install Python dependencies:
+```bash
 pip install -r requirements.txt
+```
+Dependencies include: Flask, pandas, scikit-learn, numpy, joblib
 
-
-Dependencies include:
-
-Flask
-
-pandas
-
-scikit-learn
-
-numpy
-
-joblib
-
-Run the Flask server:
-
+4. Run the Flask server:
+```bash
 python server.py
+```
+The server will run by default on `http://localhost:8000`.
 
-
-The server will run by default on http://localhost:8000.
-
-Frontend (Next.js Client)
-
-Navigate to the client folder:
-
+### Frontend (Next.js Client)
+1. Navigate to the client folder:
+```bash
 cd client
-
-
-Install dependencies:
-
+```
+2. Install dependencies:
+```bash
 npm install
 # or
 yarn
-
-
-Create a .env.local file in the client folder with the backend URL:
-
+```
+3. Create a `.env.local` file in the client folder with the backend URL:
+```
 NEXT_PUBLIC_API_URL=http://localhost:8000
-
-
-Start the Next.js development server:
-
+```
+4. Start the Next.js development server:
+```bash
 npm run dev
 # or
 yarn dev
+```
+The client will run on `http://localhost:3000` and make API calls to your Flask backend.
 
-
-The client will run on http://localhost:3000 and make API calls to your Flask backend.
-
-API Endpoint
-/predict
-
-Method: POST
-Query Parameter: model=lr|rf (lr = Linear Regression, rf = Random Forest)
-Expected JSON Body:
-
+## API Endpoint
+**`/predict`**
+- Method: POST
+- Query Parameter: `model=lr|rf` (lr = Linear Regression, rf = Random Forest)
+- Expected JSON Body:
+```json
 {
   "Bathrooms": 2,
   "Bedrooms": 3,
-  "Location": "City",      // options: City | Suburb | Rural
+  "Location": "City",
   "Size_sqft": 1500,
   "YearBuilt": 2010
 }
-
-
-Response Example:
-
+```
+- Response Example:
+```json
 {
   "prediction": 350000
 }
-
-
-Message:
-
+```
+- Message:
+```json
 {
   "message": "House Price Prediction API"
 }
+```
 
-Usage
-Backend (Flask)
+## Usage
+**Backend (Flask)**
+- `preprocess.ipynb`: Clean and preprocess your dataset.
+- `model.ipynb`: Train models and save them in the `models/` folder.
+- `server.py`: Run the Flask server to handle `/predict` requests.
 
-preprocess.ipynb: Clean and preprocess your dataset.
+**Frontend (Next.js)**
+- Access the web app via `http://localhost:3000`.
+- Input features and get predicted house prices in real-time.
 
-model.ipynb: Train models and save them in the models/ folder.
+## Models
+- Linear Regression (lr): Simple and interpretable for linear relationships.
+- Random Forest (rf): Handles non-linear relationships and generally gives higher accuracy.
 
-server.py: Run the Flask server to handle /predict requests.
+## Dependencies
+**Backend (Flask):**
+- Python 3.x
+- Flask
+- pandas
+- scikit-learn
+- numpy
+- joblib
 
-Frontend (Next.js)
+**Frontend (Next.js):**
+- Node.js / npm
+- Next.js
+- React
 
-Access the web app via http://localhost:3000
+## Author
+- maajid7ahmed
+- GitHub: https://github.com/maajid7ahmed
 
-Input features and get predicted house prices in real-time.
-
-Models
-
-Linear Regression (lr): Simple and interpretable for linear relationships.
-
-Random Forest (rf): Handles non-linear relationships and generally gives higher accuracy.
-
-Dependencies
-
-Backend (Flask):
-
-Python 3.x
-
-Flask
-
-pandas
-
-scikit-learn
-
-numpy
-
-joblib
-
-Frontend (Next.js):
-
-Node.js / npm
-
-Next.js
-
-React
-
-Author
-
-maajid7ahmed
-GitHub: https://github.com/maajid7ahmed
-
-License
-
+## License
 MIT License
-
